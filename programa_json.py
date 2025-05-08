@@ -3,7 +3,6 @@ import os
 
 ARQUIVO = 'dados.json'
 
-# Função para carregar dados do JSON
 def carregar_dados():
     if os.path.exists(ARQUIVO):
         with open(ARQUIVO, 'r') as f:
@@ -11,12 +10,10 @@ def carregar_dados():
     else:
         return {}
 
-# Função para salvar dados no JSON
 def salvar_dados(dados):
     with open(ARQUIVO, 'w') as f:
         json.dump(dados, f, indent=4)
 
-# Função principal do programa
 def menu():
     while True:
         print("\n1. Adicionar dado")
@@ -44,5 +41,4 @@ def menu():
         else:
             print("Opção inválida!")
 
-# Executar o programa
 menu()
